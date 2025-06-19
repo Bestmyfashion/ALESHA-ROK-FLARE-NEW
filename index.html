@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alesha Rok Flare - Premium Fashion Landing Page</title>
+  <meta name="description" content="Alesha Rok Flare - Rok flare premium, elegan dan trendi untuk wanita Indonesia. Promo terbatas, dapatkan sekarang!">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rose-gold: #D4AF37;
+      --cream: #F5F5DC;
+      --charcoal: #36454F;
+      --soft-pink: #fbeee6;
+      --border-radius: 18px;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    body {
+      position: relative;
+      min-height: 100vh;
+      background: linear-gradient(140deg, #fbeee6 0%, #f3f3f3 100%);
+    }
+    header {
+      padding: 0;
+      margin: 0;
+      width: 100vw;
+      overflow-x: hidden;
+      position: relative;
+    }
+    .hero {
+      position: relative;
+      width: 100vw;
+      min-height: 70vh;
+      background: linear-gradient(to bottom, #fff 30%, var(--cream) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding-bottom: 4rem;
+    }
+    .hero-images {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      z-index: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .hero-images img {
+      width: 26vw;
+      max-width: 400px;
+      min-width: 200px;
+      object-fit: cover;
+      margin: 0 1vw;
+      border-radius: var(--border-radius);
+      box-shadow: 0 8px 32px 0 rgba(52, 69, 79, 0.12),0 2px 4px 0 rgba(212,175,55,.05);
+      filter: brightness(0.96);
+      transition: transform .7s cubic-bezier(.5,.2,.1,1);
+      opacity: 0;
+      animation: fadeinup 1.2s forwards;
+    }
+    .hero-images img:nth-child(1) { animation-delay: 0.1s;}
+    .hero-images img:nth-child(2) { animation-delay: 0.3s;}
+    .hero-images img:nth-child(3) { animation-delay: 0.5s;}
+    .hero-images img:nth-child(4) { animation-delay: 0.7s;}
+    @keyframes fadeinup {
+      from { opacity: 0; transform: translateY(40px) scale(0.98);}
+      to { opacity: 1; transform: translateY(0) scale(1);}
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      margin-top: 58vh;
+      padding: 0 1.5rem;
+    }
+    .tagline {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      color: var(--rose-gold);
+      font-weight: 700;
+      margin-bottom: .5rem;
+      letter-spacing: 0.5px;
+      text-shadow: 0 2px 8px #fff3,0 2px 2px #d4af3740;
+    }
+    .product-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.1rem;
+      color: var(--charcoal);
+      margin-bottom: .3rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      line-height: 1.1;
+      text-shadow: 0 1px 0 #fbeee6;
+    }
+    .promo-banner {
+      margin-top: 1.1rem;
+      background: rgba(212,175,55,.07);
+      border: 1.5px solid var(--rose-gold);
+      border-radius: var(--border-radius);
+      display: inline-block;
+      padding: 0.8rem 1.7rem;
+      font-size: 1.18rem;
+      color: var(--charcoal);
+      font-weight: 500;
+      letter-spacing: 0.2px;
+      box-shadow: 0 2px 8px #d4af3722;
+    }
+    .promo-banner .normal {
+      color: #888;
+      text-decoration: line-through;
+      margin-right: .7em;
+      font-size: 1rem;
+    }
+    .promo-banner .promo {
+      color: var(--rose-gold);
+      font-size: 1.35em;
+      font-weight: 700;
+      margin-right: .7em;
+    }
+    .promo-banner .today {
+      color: #c1440e;
+      font-weight: 600;
+    }
+    .urgency {
+      font-size: 1.08rem;
+      color: #c1440e;
+      margin: 1.2rem 0 0.2rem 0;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: #fffbe9;
+      display: inline-block;
+      padding: .4em 1.2em;
+      border-radius: 30px;
+      border: 1px solid #ffe4a1;
+      box-shadow: 0 1px 4px #d4af3720;
+      animation: fadeinup 1.5s 1.2s forwards;
+      opacity: 0;
+    }
+    /* Key Benefits */
+    .benefits {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 3.5rem auto 1.5rem auto;
+      max-width: 1024px;
+      gap: 1.6rem;
+      z-index: 2;
+    }
+    .benefit-card {
+      background: #fff;
+      border-radius: var(--border-radius);
+      flex: 1 1 220px;
+      min-width: 220px;
+      max-width: 280px;
+      margin: 0 0.2rem;
+      padding: 1.5rem 1.1rem 1.3rem 1.1rem;
+      box-shadow: 0 3px 16px #d4af3722;
+      border: 1.3px solid #f3e6c5;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      animation: fadeinup 1s forwards;
+      opacity: 0;
+    }
+    .benefit-card:nth-child(1) { animation-delay: 1.3s;}
+    .benefit-card:nth-child(2) { animation-delay: 1.5s;}
+    .benefit-card:nth-child(3) { animation-delay: 1.7s;}
+    .benefit-card:nth-child(4) { animation-delay: 1.9s;}
+    .benefit-title {
+      font-family: 'Playfair Display', serif;
+      color: var(--rose-gold);
+      font-size: 1.13rem;
+      font-weight: 700;
+      margin-bottom: .5em;
+      letter-spacing: 0.2px;
+      line-height: 1.2;
+    }
+    .benefit-desc {
+      font-size: 1.02rem;
+      color: var(--charcoal);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+    /* Section Title */
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      text-align: center;
+      margin: 3.2rem 0 1.1rem 0;
+      color: var(--rose-gold);
+      font-weight: 700;
+      letter-spacing: 0.4px;
+    }
+    /* Dynamic Counters */
+    .conversion-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2.2rem;
+      margin: 2.4rem auto 2rem auto;
+      max-width: 750px;
+    }
+    .conversion-item {
+      background: #fff;
+      border: 1.5px solid #ffe4a1;
+      border-radius: 999px;
+      padding: .75em 1.8em;
+      font-size: 1.13rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      box-shadow: 0 2px 9px #d4af3740;
+      display: flex;
+      align-items: center;
+      gap: .7em;
+      min-width: 180px;
+      justify-content: center;
+      animation: fadeinup 1.5s forwards;
+      opacity: 0;
+    }
+    .conversion-item i {
+      color: var(--rose-gold);
+      font-size: 1.4em;
+      margin-right: .6em;
+    }
+    .conversion-item:nth-child(1) { animation-delay: 2.1s;}
+    .conversion-item:nth-child(2) { animation-delay: 2.3s;}
+    .conversion-item:nth-child(3) { animation-delay: 2.5s;}
+    /* Size Guide Modal */
+    .size-guide-link {
+      color: var(--rose-gold);
+      text-decoration: underline;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1.06rem;
+      margin-left: .6em;
+      transition: color .2s;
+    }
+    .size-guide-link:hover { color: #b08a2e;}
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 98;
+      left: 0; top: 0; width: 100vw; height: 100vh;
+      background: rgba(54, 69, 79, 0.25);
+      align-items: center; justify-content: center;
+      transition: opacity .3s;
+    }
+    .modal-content {
+      background: #fff;
+      border-radius: var(--border-radius);
+      padding: 2.2rem 1.6rem;
+      max-width: 380px;
+      margin: auto;
+      border: 2px solid var(--rose-gold);
+      box-shadow: 0 8px 32px #d4af3710;
+      animation: fadeinup 0.5s;
+    }
+    .modal-content h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--rose-gold);
+      font-size: 1.3rem;
+      margin-bottom: 1em;
+      text-align: center;
+    }
+    .modal-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.2em;
+    }
+    .modal-content th, .modal-content td {
+      border: 1px solid #e0cfa5;
+      padding: .5em .8em;
+      text-align: center;
+      font-size: 1rem;
+    }
+    .modal-content th {
+      background: #fff9e4;
+      color: var(--rose-gold);
+    }
+    .close-modal {
+      color: #bbb;
+      float: right;
+      font-size: 1.6em;
+      font-weight: 700;
+      margin-top: -1.1em;
+      margin-right: -0.5em;
+      cursor: pointer;
+      transition: color .2s;
+    }
+    .close-modal:hover { color: var(--rose-gold);}
+    /* Color Variations */
+    .colorshowcase {
+      display: flex;
+      gap: 1.2em;
+      justify-content: center;
+      margin: 2.2em 0 1.1em 0;
+      flex-wrap: wrap;
+    }
+    .color-swatch {
+      border: 2px solid var(--rose-gold);
+      border-radius: 50%;
+      width: 42px; height: 42px;
+      cursor: pointer;
+      transition: box-shadow .2s;
+      box-shadow: 0 2px 8px #d4af3730;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .color-swatch.selected { box-shadow: 0 0 0 3px var(--rose-gold);}
+    .swatch-label {
+      font-size: .97rem;
+      margin-top: .25em;
+      color: var(--charcoal);
+      text-align: center;
+      font-weight: 500;
+    }
+    .swatch-inner {
+      width: 32px; height: 32px; border-radius: 50%;
+      border: 1.5px solid #fff8;
+      box-shadow: 0 1px 2px #0002;
+    }
+    /* OOTD Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 1.4em;
+      margin: 1.8em 0 1.2em 0;
+      max-width: 950px;
+      margin-left: auto; margin-right: auto;
+    }
+    .gallery img {
+      width: 100%; height: 210px;
+      object-fit: cover;
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 14px #d4af3720;
+      transition: filter .3s, transform .3s;
+      filter: grayscale(.06) brightness(.99);
+    }
+    .gallery img:hover { filter: brightness(1.1) grayscale(0);}
+    /* Testimonials */
+    .testimonials {
+      max-width: 910px;
+      margin: 2.5em auto 4em auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 1.8em;
+    }
+    .testimonial-card {
+      background: #fff;
+      border-radius: var(--border-radius);
+      border: 1.2px solid #ffe5b9;
+      box-shadow: 0 2px 12px #d4af3720;
+      padding: 1.5em 1.2em;
+      font-size: 1.05em;
+      position: relative;
+      animation: fadeinup 1s forwards;
+      opacity: 0;
+    }
+    .testimonial-card:nth-child(1) { animation-delay: 2.6s;}
+    .testimonial-card:nth-child(2) { animation-delay: 2.7s;}
+    .testimonial-card:nth-child(3) { animation-delay: 2.8s;}
+    .testimonial-card:nth-child(4) { animation-delay: 2.9s;}
+    .testimonial-card:before {
+      content: '“';
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4em;
+      color: var(--rose-gold);
+      position: absolute;
+      top: .2em; left: .3em;
+      opacity: .16;
+    }
+    .testimonial-content {
+      margin-bottom: 1.1em;
+      font-weight: 500;
+      color: var(--charcoal);
+      line-height: 1.5;
+    }
+    .testimonial-author {
+      font-family: 'Montserrat',sans-serif;
+      color: #c1440e;
+      font-size: .97em;
+      font-weight: 600;
+    }
+    .testimonial-rating {
+      color: #ffb300;
+      font-size: 1.2em;
+      margin-left: .5em;
+    }
+    /* Influencer Section */
+    .influencers {
+      max-width: 830px;
+      margin: 2.6em auto 3.6em auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 2.1em;
+    }
+    .influencer-quote {
+      background: #fff;
+      border-radius: var(--border-radius);
+      border: 1.2px solid #ffe5b9;
+      box-shadow: 0 2px 10px #d4af3720;
+      padding: 1.4em 1.2em;
+      font-size: 1.1em;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2em;
+      margin: 0 auto;
+      max-width: 520px;
+      animation: fadeinup 1.2s 3.2s forwards;
+      opacity: 0;
+    }
+    .influencer-avatar {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2.5px solid var(--rose-gold);
+      box-shadow: 0 1px 4px #d4af3722;
+      margin-top: 0.3em;
+    }
+    .influencer-details {
+      display: flex; flex-direction: column; align-items: flex-start;
+    }
+    .influencer-name {
+      color: var(--rose-gold);
+      font-weight: 700;
+      margin-bottom: .2em;
+      font-family: 'Playfair Display', serif;
+    }
+    /* Sticky Price Banner */
+    .sticky-banner {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: #fff8;
+      box-shadow: 0 -2px 24px #d4af3720;
+      border-top: 2px solid var(--rose-gold);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .9em 1.4em;
+      font-size: 1.14em;
+      font-weight: 600;
+      color: var(--charcoal);
+      backdrop-filter: blur(8px);
+      gap: 1.2em;
+      animation: fadeinup 1s 3.7s forwards;
+      opacity: 0;
+    }
+    .sticky-banner .price {
+      color: var(--rose-gold);
+      font-size: 1.23em;
+      font-weight: 700;
+    }
+    .sticky-banner .normal {
+      text-decoration: line-through;
+      color: #aaa;
+      font-weight: 400;
+      font-size: 1em;
+      margin-left: 8px;
+    }
+    .sticky-banner .cta-btn {
+      background: var(--rose-gold);
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: .7em 1.9em;
+      font-size: 1.13em;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .18s, box-shadow .18s;
+      box-shadow: 0 1px 8px #d4af3740;
+      letter-spacing: 0.06em;
+    }
+    .sticky-banner .cta-btn:hover {
+      background: #b08a2e;
+      box-shadow: 0 1px 13px #d4af3730;
+    }
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-images img { width: 32vw; min-width: 120px;}
+      .benefits { gap: 0.8rem;}
+    }
+    @media (max-width: 650px) {
+      .hero-images img { width: 44vw;}
+      .hero-content { margin-top: 56vw;}
+      .product-name { font-size: 2.2rem;}
+      .tagline { font-size: 1.4rem;}
+      .benefits { flex-direction: column; align-items: center;}
+      .benefit-card { max-width: 98vw;}
+      .section-title { font-size: 1.3rem;}
+      .conversion-bar { gap: 1.1rem;}
+      .sticky-banner { font-size: 1em; flex-direction: column; gap: .7em;}
+    }
+    @media (max-width: 480px) {
+      .hero-content { margin-top: 52vw; padding: 0 0.2rem;}
+      .tagline { font-size: 1.08rem;}
+      .product-name { font-size: 1.3rem;}
+      .promo-banner { font-size: 1em; padding: .7em 1em;}
+      .gallery img { height: 110px;}
+      .modal-content { padding: 1.1em .5em;}
+    }
+    /* Fade-in for sticky banner after everything */
+    @media (max-width: 550px) {
+      .sticky-banner { padding: .7em .5em;}
+      .sticky-banner .cta-btn { padding: .7em 1.1em;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="hero">
+      <div class="hero-images" aria-hidden="true">
+        <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbka-maamf430wgxw33.webp" alt="Alesha Rok Flare 1" loading="eager"/>
+        <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbka-mabq2p17gpz494.webp" alt="Alesha Rok Flare 2" loading="lazy"/>
+        <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbkb-maamf430xvic7e.webp" alt="Alesha Rok Flare 3" loading="lazy"/>
+        <img src="https://down-id.img.susercontent.com/file/id-11134207-7rasm-m0on4itimg5310.webp" alt="Alesha Rok Flare 4" loading="lazy"/>
+      </div>
+      <div class="hero-content">
+        <div class="tagline">Bahan 100% Original Premium</div>
+        <div class="product-name">Alesha Rok Flare</div>
+        <div class="promo-banner">
+          <span class="normal">Harga Normal: Rp 277.500</span>
+          <span class="promo">Promo Hari Ini: Rp 185.000</span>
+        </div>
+        <div class="urgency" id="urgencyText">
+          PROMO HANYA UNTUK 50 ORANG TERCEPAT
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Key Benefits -->
+    <section class="benefits">
+      <div class="benefit-card">
+        <div class="benefit-title">Premium Quality Materials</div>
+        <div class="benefit-desc">Bahan berkualitas tinggi yang nyaman dan tahan lama</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-title">Trendy Indonesian Fashion</div>
+        <div class="benefit-desc">Desain mengikuti tren fashion terkini untuk wanita Indonesia</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-title">Perfect Fit & Comfort</div>
+        <div class="benefit-desc">Cutting sempurna yang mengikuti lekuk tubuh dengan nyaman</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-title">Instagram-Perfect Style</div>
+        <div class="benefit-desc">Tampilan yang sempurna untuk OOTD dan acara special</div>
+      </div>
+    </section>
+
+    <!-- Dynamic Counters -->
+    <section class="conversion-bar">
+      <div class="conversion-item">
+        <i>👀</i>
+        <span>Sedang dilihat: <span id="viewerCounter">-</span> orang</span>
+      </div>
+      <div class="conversion-item">
+        <i>⏳</i>
+        <span>Sisa waktu promo: <span id="countdownTimer">00:10:00</span></span>
+      </div>
+      <div class="conversion-item">
+        <i>🛒</i>
+        <span>Stok tersisa: <span id="stockCounter">-</span> pcs</span>
+      </div>
+    </section>
+
+    <!-- Size Guide & Color Variation -->
+    <section style="text-align:center;">
+      <span>
+        <span style="font-weight:600;">Butuh panduan ukuran?</span>
+        <span class="size-guide-link" onclick="showModal('sizeGuideModal')">Lihat Panduan Ukuran</span>
+      </span>
+      <div class="colorshowcase" style="margin-top:1.2em;">
+        <div class="color-swatch selected" data-color="Cream" onclick="selectColor(this)">
+          <div class="swatch-inner" style="background: #f9f6f1;"></div>
+        </div>
+        <div class="color-swatch" data-color="Rose Gold" onclick="selectColor(this)">
+          <div class="swatch-inner" style="background:linear-gradient(120deg,#ffd9a0 40%, #d4af37 100%);"></div>
+        </div>
+        <div class="color-swatch" data-color="Charcoal" onclick="selectColor(this)">
+          <div class="swatch-inner" style="background:#36454F;"></div>
+        </div>
+        <div class="color-swatch" data-color="Pastel Pink" onclick="selectColor(this)">
+          <div class="swatch-inner" style="background:#fbeee6;"></div>
+        </div>
+      </div>
+      <div id="colorLabel" class="swatch-label">Cream</div>
+    </section>
+
+    <!-- OOTD Inspiration Gallery -->
+    <div class="section-title">Inspirasi OOTD dengan Alesha Rok Flare</div>
+    <div class="gallery">
+      <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbka-maamf430wgxw33.webp" alt="OOTD 1" />
+      <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbka-mabq2p17gpz494.webp" alt="OOTD 2" />
+      <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbkb-maamf430xvic7e.webp" alt="OOTD 3" />
+      <img src="https://down-id.img.susercontent.com/file/id-11134207-7rasm-m0on4itimg5310.webp" alt="OOTD 4" />
+    </div>
+
+    <!-- Testimonials -->
+    <div class="section-title">Testimoni Pelanggan</div>
+    <div class="testimonials">
+      <div class="testimonial-card">
+        <div class="testimonial-content">"Saya suka sekali dengan Alesha Rok Frame! Bahan yang digunakan terasa nyaman di kulit, dan desainnya sangat elegan. Rok ini membuat penampilan saya lebih anggun tanpa mengorbankan kenyamanan. Cocok banget untuk acara formal atau semi-formal. Pasti beli lagi!"</div>
+        <div class="testimonial-author">Rina, 32 tahun, Jakarta <span class="testimonial-rating">★★★★★</span></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-content">"Alesha Rok Frame ini benar-benar nyaman dipakai sepanjang hari. Saya pakai ke kantor dan meskipun duduk lama, rok ini tetap enak dipakai. Modelnya juga kekinian, cocok dengan berbagai atasan. Pokoknya puas banget!"</div>
+        <div class="testimonial-author">Dina, 25 tahun, Surabaya <span class="testimonial-rating">★★★★★</span></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-content">"Saya mencari rok yang bisa digunakan untuk acara resmi dan santai, dan akhirnya menemukan Alesha Rok Frame. Desainnya simpel tapi tetap terlihat mewah, serta ukuran yang pas di tubuh saya. Jadi bisa tampil percaya diri di berbagai kesempatan!"</div>
+        <div class="testimonial-author">Maya, 40 tahun, Bandung <span class="testimonial-rating">★★★★★</span></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-content">"Rok Alesha ini memberikan kesan chic dan elegan, tapi tetap nyaman. Bahannya berkualitas, tidak mudah kusut, dan yang paling penting tidak terbatas pada satu jenis acara saja. Bisa dipakai untuk berbagai gaya. Saya suka banget!"</div>
+        <div class="testimonial-author">Lina, 28 tahun, Yogyakarta <span class="testimonial-rating">★★★★★</span></div>
+      </div>
+    </div>
+
+    <!-- Fashion Influencer Testimonials -->
+    <div class="section-title">Apa Kata Fashion Influencer?</div>
+    <div class="influencers">
+      <div class="influencer-quote">
+        <img class="influencer-avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Fashion Influencer"/>
+        <div class="influencer-details">
+          <div class="influencer-name">@sarahchic.id</div>
+          <div>"Serius, ini rok flare paling versatile! Bisa dipakai buat OOTD harian, brunch, bahkan ke event formal. Bahannya lembut, tidak nerawang, dan jatuhnya elegan banget. Suka gold accent-nya!"</div>
+        </div>
+      </div>
+      <div class="influencer-quote">
+        <img class="influencer-avatar" src="https://randomuser.me/api/portraits/women/55.jpg" alt="Fashion Influencer 2"/>
+        <div class="influencer-details">
+          <div class="influencer-name">@lilystyle.jkt</div>
+          <div>"Cutting dan pilihan warnanya bener-bener premium. Aku suka banget khususnya buat foto-foto Instagram, hasilnya selalu on point dan berkelas."</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Size Guide Modal -->
+  <div class="modal" id="sizeGuideModal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="hideModal('sizeGuideModal')">&times;</span>
+      <h3>Panduan Ukuran Alesha Rok Flare</h3>
+      <table>
+        <tr><th>Ukuran</th><th>Panjang</th><th>Lingkar Pinggang</th><th>Lingkar Rok</th></tr>
+        <tr><td>S</td><td>85cm</td><td>64-72cm</td><td>250cm</td></tr>
+        <tr><td>M</td><td>87cm</td><td>68-76cm</td><td>260cm</td></tr>
+        <tr><td>L</td><td>89cm</td><td>72-80cm</td><td>270cm</td></tr>
+      </table>
+      <div style="font-size:.97em;color:#c1440e;">
+        Pilih ukuran sesuai lingkar pinggang dan tinggi badan Anda untuk hasil terbaik.
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Price Banner -->
+  <div class="sticky-banner">
+    <span>
+      <span class="price">Rp 185.000</span>
+      <span class="normal">Rp 277.500</span>
+    </span>
+    <button class="cta-btn" onclick="window.open('https://alya.orderonline.id/alesha-rok-flare','_self')">DAPATKAN PROMONYA</button>
+  </div>
+
+  <script>
+    // Animate benefit cards, testimonial cards, conversion items
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        document.querySelectorAll('.benefit-card,.testimonial-card,.conversion-item,.influencer-quote,.sticky-banner,.urgency').forEach(e => {
+          e.style.opacity = 1;
+        });
+      }, 1400);
+    });
+
+    // Color swatch
+    function selectColor(el) {
+      document.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('selected'));
+      el.classList.add('selected');
+      document.getElementById('colorLabel').textContent = el.dataset.color;
+    }
+
+    // Modal
+    function showModal(id) {
+      document.getElementById(id).style.display = 'flex';
+      setTimeout(() => {
+        document.getElementById(id).querySelector('.modal-content').focus();
+      }, 200);
+    }
+    function hideModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+    window.onclick = function(event) {
+      document.querySelectorAll('.modal').forEach(modal => {
+        if(event.target == modal) modal.style.display = 'none';
+      });
+    };
+
+    // Dynamic Counter - "Sedang dilihat"
+    function animateCounter(id, min, max, duration = 1400) {
+      const el = document.getElementById(id);
+      const target = Math.floor(Math.random() * (max-min+1)) + min;
+      let current = min - Math.floor(Math.random() * 60);
+      const steps = Math.abs(target-current);
+      let inc = (target - current) / steps;
+      let i = 0;
+      function tick() {
+        if(i < steps) {
+          current += inc;
+          el.textContent = Math.floor(current);
+          i++;
+          setTimeout(tick, duration / steps);
+        } else {
+          el.textContent = target;
+        }
+      }
+      tick();
+      // Animate up and down slightly every ~8s to 12s
+      setInterval(() => {
+        let delta = Math.floor(Math.random()*18)-9;
+        let now = parseInt(el.textContent);
+        let next = Math.max(min, Math.min(max, now+delta));
+        el.textContent = next;
+      }, Math.random() * 4000 + 8000);
+    }
+    animateCounter('viewerCounter', 1800, 2500);
+
+    // Dynamic Counter - "Stok tersisa"
+    function animateStockCounter(id) {
+      const el = document.getElementById(id);
+      let stock = 50 - Math.floor(Math.random() * 6);
+      el.textContent = stock;
+      setInterval(() => {
+        if(stock > 7) {
+          stock -= Math.random() < 0.14 ? 1 : 0;
+        }
+        el.textContent = stock;
+      }, Math.random()*9000+7000);
+    }
+    animateStockCounter('stockCounter');
+
+    // Dynamic Countdown Timer - 10 mins, resets on reload
+    function startCountdown(id, minutes=10) {
+      let el = document.getElementById(id);
+      let t = minutes * 60;
+      function render() {
+        let m = String(Math.floor(t/60)).padStart(2,'0');
+        let s = String(t%60).padStart(2,'0');
+        el.textContent = `00:${m}:${s}`;
+      }
+      render();
+      let itv = setInterval(() => {
+        t--;
+        if(t <= 0) {
+          t = minutes * 60;
+        }
+        render();
+      }, 1000);
+    }
+    startCountdown('countdownTimer', 10);
+
+    // Parallax effect on hero images
+    window.addEventListener('scroll', function() {
+      const scrolled = window.scrollY;
+      document.querySelectorAll('.hero-images img').forEach((img, i) => {
+        img.style.transform = `translateY(${scrolled*0.12 + i*5}px) scale(1.04)`;
+        img.style.filter = `brightness(${0.98-Math.min(scrolled/1500,0.13)})`;
+      });
+    }, {passive:true});
+  </script>
+</body>
+</html>
